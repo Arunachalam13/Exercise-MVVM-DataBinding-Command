@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMDemo.Views.PeopleView"
+             Title="PeopleView">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding Item}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center" />
+                                <Slider Value="{Binding Age}"
+                                        Maximum="100"
+                                        Minimum="0"/>
+                                <Switch IsToggled="{Binding Married}"/>
+                                <DatePicker Date="{Binding BirthDate}"/>
+                                <Entry Text="{Binding Weight}"/>
+                                <TimePicker Time="{Binding Lunchtime}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="click" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

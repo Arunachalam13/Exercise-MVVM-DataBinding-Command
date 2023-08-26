@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMDemo.Views.CommandsView"
+             Title="CommandsView">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Spacing="10">
+        <Label Text="Welcome to .NET MAUI!"/>
+        <Button Text="Command direct lambda"
+                Command="{Binding ClickCommand}"/>
+        <Button Text="Command with method"
+                Command="{Binding MethodCommand}"/>
+        <Button Text="Command method in Constructor"
+                Command="{Binding ConstructCommand}"/>
+        <SearchBar x:Name="searchBar"
+                   SearchCommand="{Binding CommandSearch}"
+                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"/>
+    </VerticalStackLayout>
+</ContentPage>
